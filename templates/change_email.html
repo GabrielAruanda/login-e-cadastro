@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}Alterar E-mail{% endblock %}
+
+{% block content %}
+<h2>Alterar E-mail</h2>
+<form action="{{ url_for('alterar_email') }}" method="post">
+    E-mail Atual: <input type="email" name="email_atual" required><br>
+    Senha: <input type="password" name="senha" required><br>
+    Novo E-mail: <input type="email" name="novo_email" required><br>
+    <input type="submit" value="Alterar E-mail">
+</form>
+{% endblock %}

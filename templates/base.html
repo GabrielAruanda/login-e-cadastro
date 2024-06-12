@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Cadastro de Usuários{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="{{ url_for('registrar_usuario') }}">Registrar</a></li>
+            <li><a href="{{ url_for('verificar_login') }}">Login</a></li>
+            <li><a href="{{ url_for('alterar_senha') }}">Alterar Senha</a></li>
+            <li><a href="{{ url_for('alterar_email') }}">Alterar E-mail</a></li>
+            <li><a href="{{ url_for('excluir_usuario') }}">Excluir Usuário</a></li>
+        </ul>
+    </nav>
+    <div class="content">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

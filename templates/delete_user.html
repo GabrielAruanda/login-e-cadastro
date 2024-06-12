@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}Excluir Usuário{% endblock %}
+
+{% block content %}
+<h2>Excluir Usuário</h2>
+<form action="{{ url_for('excluir_usuario') }}" method="post">
+    E-mail: <input type="email" name="email" required><br>
+    Senha: <input type="password" name="senha" required><br>
+    <input type="submit" value="Excluir Usuário">
+</form>
+{% endblock %}
